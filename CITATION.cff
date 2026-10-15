@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the DeepHeal research article and this repository."
+type: software
+title: "DeepHeal: An interpretable proteomics-first framework for computational drug repurposing"
+authors:
+  - family-names: "Feng"
+    given-names: "Disheng"
+  - family-names: "Liang"
+    given-names: "Jing"
+  - family-names: "Zhang"
+    given-names: "Kexin"
+  - family-names: "Cai"
+    given-names: "Xu"
+  - family-names: "Yang"
+    given-names: "Yueying"
+  - family-names: "Wang"
+    given-names: "Meijing"
+  - family-names: "Li"
+    given-names: "Hua"
+  - family-names: "Chen"
+    given-names: "Lixia"
+repository-code: "https://github.com/DeepHeal/deepheal-study"
+license: MIT
+keywords:
+  - proteomics
+  - drug repurposing
+  - interpretable machine learning

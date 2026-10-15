@@ -1,0 +1,16 @@
+numpy
+pandas
+scipy
+scikit-learn
+torch
+matplotlib
+seaborn
+openpyxl
+requests
+networkx
+statsmodels
+lightgbm
+autogluon.tabular==1.5.0
+prototorch
+pytorch-lightning
+lightning-fabric
