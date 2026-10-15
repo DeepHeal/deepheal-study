@@ -4,6 +4,10 @@ Code for **DeepHeal: An interpretable proteomics-first framework for computation
 
 DeepHeal learns protein response programs from a public HCT116 perturbation atlas. The Average branch constructs a label-independent VAE ensemble; the SupCon branch incorporates known antineoplastic labels. The workflows connect consensus embeddings, protein attribution, pathway analysis, candidate prioritization, external transfer and exploratory patient analyses.
 
+![DeepHeal workflow: consensus representation learning, protein and pathway interpretation, and candidate discovery with contextual validation.](docs/figures/deepheal_overview.png)
+
+**DeepHeal workflow.** Overview of the framework and its interpretation and validation workflows (Figure 1 of the accompanying manuscript).
+
 ## Organization
 
 Analysis entry scripts are grouped by research task. Their reusable implementations are in `src/deepheal`. Original data, model banks and generated figures are separate from the source code; input requirements are documented in data/README.md.
