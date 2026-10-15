@@ -1,8 +1,8 @@
 # Third-party notices
 
-The retained VAE ensemble and GMeans implementations acknowledge DeepProfile (https://github.com/suinleelab/deepprofile-study). Its MIT notice is reproduced below. Existing source attributions are retained. Dependencies remain subject to their own licenses.
+## GMeans clustering
 
-## DeepProfile
+The GMeans classes in src/deepheal/models/average_ensemble.py and src/deepheal/models/supcon_ensemble.py are adapted from https://github.com/suinleelab/deepprofile-study (original implementation: flylo/g-means). The upstream license notice follows.
 
 MIT License
 

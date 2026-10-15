@@ -26,10 +26,10 @@ from scipy.stats import fisher_exact
 
 ROOT = ARTICLE_ROOT
 RAW_DIR = ROOT / "data" / "raw"
-EXTERNAL_DIR = ROOT / 'data/external/deepprofile_commonality'
-TABLE_DIR = ROOT / 'tables/deepprofile_commonality'
-FIG_DIR = ROOT / 'figures/deepprofile_commonality'
-RESULT_DIR = ROOT / 'results/deepprofile_commonality'
+EXTERNAL_DIR = ROOT / 'data/external/compound_commonality'
+TABLE_DIR = ROOT / 'tables/compound_commonality'
+FIG_DIR = ROOT / 'figures/compound_commonality'
+RESULT_DIR = ROOT / 'results/compound_commonality'
 
 ATC_PATH = RAW_DIR / "875_Drugs_Metainformation_ATC_Classfication.xlsx"
 ATC_REQUESTED_PATH = RAW_DIR / "875_Drugs_Metainformation_ATC_Classification.xlsx"
@@ -1411,8 +1411,8 @@ def plot_group_figure(
     ax_d.spines[["top", "right"]].set_visible(False)
     ax_d.grid(axis="x", color="#e5e7eb", linewidth=0.6)
 
-    fig.savefig(FIG_DIR / f"deepheal_deepprofile_commonality_{group_key}.png", bbox_inches="tight")
-    fig.savefig(FIG_DIR / f"deepheal_deepprofile_commonality_{group_key}.pdf", bbox_inches="tight")
+    fig.savefig(FIG_DIR / f"deepheal_compound_commonality_{group_key}.png", bbox_inches="tight")
+    fig.savefig(FIG_DIR / f"deepheal_compound_commonality_{group_key}.pdf", bbox_inches="tight")
     plt.close(fig)
 
 

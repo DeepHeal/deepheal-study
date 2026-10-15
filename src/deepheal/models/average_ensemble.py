@@ -108,7 +108,7 @@ def dropout_tag(value: float) -> str:
 
 
 class GMeans:
-    """Adapted from DeepProfile's gmeans implementation."""
+    """G-means clustering. See THIRD_PARTY_NOTICES.md for source and license."""
 
     def __init__(self, min_obs: int = 1, max_depth: int = 10, random_state: int | None = None, strictness: int = 3):
         self.max_depth = max_depth
@@ -738,7 +738,7 @@ def aggregate_embeddings(
                 "Label_Int": int(row["Label_Int"]),
                 "Cluster": int(row["Cluster"]),
                 "embedding_count": 1,
-                "embedding_source": "deepprofile_style_average_ensemble",
+                "embedding_source": "deepheal_average_ensemble",
                 **{f"latent_{i:03d}": float(v) for i, v in enumerate(z[:latent_dim])},
             }
         )
@@ -792,7 +792,7 @@ def save_pathway_results(root: Path, out_dir: Path, pathway_mod, weights_df_mapp
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=str(ARTICLE_ROOT))
-    ap.add_argument("--results-subdir", default="results_average_deepprofile_ensemble_1000pc_full600")
+    ap.add_argument("--results-subdir", default="results/average")
     ap.add_argument("--dims", default="5,10,25,50,75,100")
     ap.add_argument("--runs-per-dim", type=int, default=100)
     ap.add_argument("--epochs", type=int, default=200)
@@ -1096,7 +1096,7 @@ def main() -> None:
         "ig_steps": int(a.ig_steps),
         "ig_max_samples": int(a.ig_max_samples),
         "ig_batch": int(a.ig_batch),
-        "evaluation_protocol": "5-fold CV hyperparameter tuning plus per-run validation reconstruction early stopping for the DeepProfile-style average-profile ensemble",
+        "evaluation_protocol": "5-fold CV hyperparameter tuning plus per-run validation reconstruction early stopping for the DeepHeal average-profile ensemble",
         "representation_learning": "unsupervised average log2FC VAE ensemble with thresholded inputs, direct PCA, and no StandardScaler",
     }
     with open(out_dir / "average_run_summary.json", "w", encoding="utf-8") as f:

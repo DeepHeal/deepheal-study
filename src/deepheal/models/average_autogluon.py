@@ -345,7 +345,7 @@ def plot_feature_importance(importance_df: pd.DataFrame, out_base: Path) -> None
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", default=str(ARTICLE_ROOT))
-    parser.add_argument("--results-subdir", default="results_average_deepprofile_ensemble_1000pc_full600")
+    parser.add_argument("--results-subdir", default="results/average")
     parser.add_argument("--embedding-file", default="average_consensus_embedding.csv")
     parser.add_argument("--output-prefix", default="average")
     parser.add_argument("--title-prefix", default="Average ensemble embedding")

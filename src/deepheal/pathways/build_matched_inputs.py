@@ -327,8 +327,8 @@ def build_all(args: argparse.Namespace) -> None:
     MATCHED_BASELINE_DIR.mkdir(parents=True, exist_ok=True)
     SOURCE_VAE_DIR.mkdir(parents=True, exist_ok=True)
 
-    benchmark = import_script(BENCHMARK_SCRIPT, "deepprofile_competitor_benchmark_prototorch")
-    fig2 = import_script(FIG2_SCRIPT, "deepprofile_fig2_pathway_analogue")
+    benchmark = import_script(BENCHMARK_SCRIPT, "deepheal_competitor_benchmark")
+    fig2 = import_script(FIG2_SCRIPT, "deepheal_pathway_comparison")
     benchmark.set_seed(args.seed)
 
     gmt_dir = PATHWAY_GMT_DIR

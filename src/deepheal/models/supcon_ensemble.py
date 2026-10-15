@@ -36,7 +36,7 @@ def load_module(script_path: Path, module_name: str):
 
 
 class GMeans:
-    """Adapted from DeepProfile's gmeans.py (originally flylo/g-means)."""
+    """G-means clustering. See THIRD_PARTY_NOTICES.md for source and license."""
 
     def __init__(self, min_obs: int = 1, max_depth: int = 10, random_state: int | None = None, strictness: int = 3):
         self.max_depth = max_depth
@@ -637,7 +637,7 @@ def invalidate_stale_supcon_cache(
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=str(ARTICLE_ROOT))
-    ap.add_argument("--results-subdir", default="results_supcon_deepprofile_ensemble")
+    ap.add_argument("--results-subdir", default="results/supcon")
     ap.add_argument("--dims", default="5,10,25,50,75,100")
     ap.add_argument("--runs-per-dim", type=int, default=100)
     ap.add_argument("--epochs", type=int, default=200)
@@ -963,7 +963,7 @@ def main() -> None:
         embedding_runs={idx: [ensemble_embeddings[idx]] for idx in range(len(df))},
         latent_dim=selected_dim,
     )
-    emb_df["embedding_source"] = "deepprofile_style_supcon_ensemble_all_labels"
+    emb_df["embedding_source"] = "deepheal_supcon_ensemble_all_labels"
     emb_df["embedding_count"] = 1
     emb_df.to_csv(out_dir / "supcon_consensus_embedding.csv", index=False)
     emb_df.to_csv(out_dir / "supcon_consensus_embedding_full.csv", index=False)
@@ -977,7 +977,7 @@ def main() -> None:
     save_pathway_results(root, out_dir, pathway_mod, weights_df_mapped, alpha=a.alpha)
 
     leakage_note = (
-        "This DeepProfile-style SupCon ensemble is trained on the full 875-drug cohort, and all 448 labeled drugs "
+        "This DeepHeal SupCon ensemble is trained on the full 875-drug cohort, and all 448 labeled drugs "
         "contribute their labels during SupCon representation learning, while each source model now uses an internal "
         "training/validation split and validation reconstruction error for checkpoint selection. Downstream within-cohort "
         "classification results should therefore be treated as transductive/exploratory, not as unbiased generalization estimates."
@@ -1016,7 +1016,7 @@ def main() -> None:
         "ig_max_samples": int(a.ig_max_samples),
         "ig_batch": int(a.ig_batch),
         "evaluation_protocol": (
-            "full-cohort DeepProfile-style SupCon ensemble with 5-fold CV hyperparameter tuning, "
+            "full-cohort DeepHeal SupCon ensemble with 5-fold CV hyperparameter tuning, "
             "validation reconstruction error checkpoint selection, and GMeans-selected ensemble size"
         ),
         "representation_learning": "full-cohort SupCon VAE ensemble with thresholded log2FC inputs, direct PCA, and no StandardScaler",

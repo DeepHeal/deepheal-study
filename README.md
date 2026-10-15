@@ -70,8 +70,6 @@ The expected shapes are 18 by 9,960 aligned proteins, 18 by 194 Average coordina
 
 Source syntax, local imports, model inference/gradient checks and the public processed-data verification are recorded in `VALIDATION.md`. Random seeds retain their scientific values, including seeds that resemble calendar dates. File and directory names use research tasks rather than run dates. This repository supplies the article's research code; it does not bundle the full data tree, 1,200 checkpoints or AutoGluon predictor directories, and is not a standalone numerical reproduction archive. Outputs from network resources can change; use the archived source inputs for exact figure reproduction.
 
-VAE ensemble and GMeans implementations acknowledge DeepProfile. The organization follows the research-task structure of https://github.com/suinleelab/deepprofile-study. See `NOTICE.md` for source attribution and licensing scope.
-
 ## License and citation
 
 The project retains the MIT license in LICENSE.md. Third-party notices are retained in THIRD_PARTY_NOTICES.md. Citation metadata for this research software is provided in CITATION.cff; the manuscript has not been assigned a publication DOI.
