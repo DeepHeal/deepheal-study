@@ -68,7 +68,7 @@ The 18-profile processed release is available at https://doi.org/10.5281/zenodo.
 python scripts/external_validation/verify_hepg2_processed_data.py --release-dir /path/to/downloaded/files
 ```
 
-The expected shapes are 18 by 9,960 aligned proteins, 18 by 194 Average coordinates, 18 by 257 SupCon coordinates and 36 prediction rows. Recovery is 14/18 and 15/18 in an assumed-positive panel; it does not estimate specificity. Full frozen inference is `scripts/external_validation/predict_hepg2_frozen.py` and requires the checkpoint and predictor artifacts listed in `data/README.md`. Raw HepG2 mass-spectrometry data: MassIVE accession MSVXXXXXXXX (placeholder). The raw files are separate from this processed release.
+The expected shapes are 18 by 9,960 aligned proteins, 18 by 194 Average coordinates, 18 by 257 SupCon coordinates and 36 prediction rows. Recovery is 14/18 and 15/18 in an assumed-positive panel; it does not estimate specificity. Full frozen inference is `scripts/external_validation/predict_hepg2_frozen.py` and requires the checkpoint and predictor artifacts listed in `data/README.md`. Raw HepG2 mass-spectrometry data: PRIDE accession PXD085749 (private during peer review; reviewer access details are provided in the manuscript). The raw files are separate from this processed release.
 
 ## Verification and scope
 
